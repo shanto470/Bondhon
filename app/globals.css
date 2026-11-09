@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: false;
+}
+
+/* Light: mist-white paper, jade primary, marigold highlight */
+@plugin "daisyui/theme" {
+  name: "bondhon";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+  --color-base-100: #ffffff;
+  --color-base-200: #f2f6f4;
+  --color-base-300: #dfe8e4;
+  --color-base-content: #10241f;
+  --color-primary: #0a7a5c;
+  --color-primary-content: #ffffff;
+  --color-secondary: #ffc83d;
+  --color-secondary-content: #2b2000;
+  --color-accent: #2f5bea;
+  --color-accent-content: #ffffff;
+  --color-neutral: #0e1f1b;
+  --color-neutral-content: #e8f0ed;
+  --color-info: #2f5bea;
+  --color-info-content: #ffffff;
+  --color-success: #1f9d6b;
+  --color-success-content: #ffffff;
+  --color-warning: #f0a500;
+  --color-warning-content: #2b2000;
+  --color-error: #d64545;
+  --color-error-content: #ffffff;
+  --radius-selector: 999px;
+  --radius-field: 0.6rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@plugin "daisyui/theme" {
+  name: "bondhon-dark";
+  default: false;
+  prefersdark: true;
+  color-scheme: dark;
+  --color-base-100: #101b18;
+  --color-base-200: #0b1412;
+  --color-base-300: #1f302b;
+  --color-base-content: #e6efeb;
+  --color-primary: #36c79f;
+  --color-primary-content: #04211a;
+  --color-secondary: #ffcf4d;
+  --color-secondary-content: #2b2000;
+  --color-accent: #7b9bff;
+  --color-accent-content: #0a1233;
+  --color-neutral: #060d0b;
+  --color-neutral-content: #e6efeb;
+  --color-info: #7b9bff;
+  --color-info-content: #0a1233;
+  --color-success: #3ccf93;
+  --color-success-content: #04211a;
+  --color-warning: #ffb938;
+  --color-warning-content: #2b2000;
+  --color-error: #ff6b6b;
+  --color-error-content: #2b0606;
+  --radius-selector: 999px;
+  --radius-field: 0.6rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@theme inline {
+  --font-sans: var(--font-bricolage), system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-base-100);
+    color: var(--color-base-content);
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* One heading style for every section */
+  .section-title {
+    font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  .section-sub {
+    margin-top: 0.75rem;
+    max-width: 38rem;
+    line-height: 1.65;
+    color: color-mix(in oklab, var(--color-base-content) 70%, transparent);
+  }
+  .container-page {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 78rem;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 640px) {
+    .container-page { padding-inline: 1.5rem; }
+  }
+  @media (min-width: 1024px) {
+    .container-page { padding-inline: 2rem; }
+  }
+  .event-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  @media (min-width: 640px) {
+    .event-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (min-width: 1024px) {
+    .event-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  /* Cork-style board used in the hero */
+  .board {
+    background-color: var(--color-base-300);
+    background-image: radial-gradient(color-mix(in oklab, var(--color-base-content) 14%, transparent) 1.2px, transparent 1.2px);
+    background-size: 18px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
