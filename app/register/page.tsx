@@ -69,7 +69,7 @@ export default function RegisterPage() {
         <Field label="Photo URL" error={errors.photoURL} hint="A link to your profile picture.">
           <input value={form.photoURL} onChange={(e) => set("photoURL", e.target.value)} inputMode="url" placeholder="https://..." className={`input w-full ${errors.photoURL ? "input-error" : ""}`} />
         </Field>
-        <Field label="Password" error={errors.password} hint="At least 6 characters with an uppercase and a lowercase letter.">
+        <Field label="Password" error={errors.password} hint="At least 8 characters with an uppercase and a lowercase letter.">
           <PasswordInput value={form.password} onChange={(v) => set("password", v)} invalid={!!errors.password} placeholder="Create a password" autoComplete="new-password" />
         </Field>
         <button disabled={busy} className="btn btn-primary btn-block">
