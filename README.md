@@ -2,7 +2,7 @@
 
 A community platform where neighbours create, join and manage social service events: winter clothes drives, blanket distributions, cleanups, plantations and more.
 
-**Live site:** https://bondhon.vercel.app  
+**Live site:** https://bondhon-cs.vercel.app  
 **API:** https://bondhon-api.vercel.app  
 
 ## Features
